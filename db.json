@@ -4,11 +4,6 @@
         "LDAPGroup": "LDAPGroupPums",
         "clientName": "pums",
         "businessName": "",
-        "serviceName": "C7XPurchaseManagementService",
-        "requestEndpoint": "C7XPurchaseManagementService.httpEndpoint",
-        "requestEndpointAuthType": "AAA",
-        "connectionTimeoutMilliSec": "500",
-        "readTimeoutMilliSec": "30000",
         "apis": [
           {
             "externalContextPath": "/live/in-store/v1/merchantScan",
@@ -67,27 +62,6 @@
             "throttlingKey": "live_v2_C7XPurchaseManagementService_createCharge"
           },
           {
-            "externalContextPath": "/live/v2/in-store/refund",
-            "internalContextPath": "/live/in-store/v1/refund",
-            "operationName": "refundExternal",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_C7XPurchaseManagementService_createRefund"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/in-store/merchantScan",
-            "internalContextPath": "/sandbox/in-store/v1/merchantScan",
-            "operationName": "merchantScan",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createMerchantScan"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/in-store/charge",
-            "internalContextPath": "/sandbox/in-store/v1/charge",
-            "operationName": "charge",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createCharge"
-          },
-          {
             "externalContextPath": "/sandbox/v2/in-store/refund",
             "internalContextPath": "/sandbox/in-store/v1/refund",
             "operationName": "refundExternal",
@@ -113,27 +87,6 @@
         "connectionTimeoutMilliSec": "500",
         "readTimeoutMilliSec": "10000",
         "apis": [
-          {
-            "externalContextPath": "/live/v1/deliveryTrackers",
-            "internalContextPath": "/v2/external/deliveryTrackers",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v1_OdysseyVASRestConnectorsService_deliveryTracker"
-          },
-          {
-            "externalContextPath": "/sandbox/v1/deliveryTrackers",
-            "internalContextPath": "/v2/external/deliveryTrackers",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_OdysseyVASRestConnectorsService_deliveryTracker"
-          },
-          {
-            "externalContextPath": "/sandbox/v1/AWM9DXCLLHRKU/bills/accounts",
-            "internalContextPath": "/sandbox/v2/external/blueBucks/linkAccountFromWeb",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_OdysseyVASRestConnectorsService_linkAccountFromWeb"
-          },
           {
             "externalContextPath": "/live/v1/AWM9DXCLLHRKU/bills/accounts",
             "internalContextPath": "/live/v2/external/blueBucks/linkAccountFromWeb",
@@ -175,27 +128,6 @@
             "operationName": "externalResource",
             "supportedMethods": ["POST"],
             "throttlingKey": "sandbox_v2_OdysseyVASRestConnectorsService_linkAccountFromWeb"
-          },
-          {
-            "externalContextPath": "/live/v2/AWM9DXCLLHRKU/bills/accounts",
-            "internalContextPath": "/live/v2/external/blueBucks/linkAccountFromWeb",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_OdysseyVASRestConnectorsService_linkAccountFromWeb"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/AWM9DXCLLHRKU/bills/events",
-            "internalContextPath": "/sandbox/v2/external/blueBucksEvents/processBillEvent",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_OdysseyVASRestConnectorsService_processBillEvent"
-          },
-          {
-            "externalContextPath": "/live/v2/AWM9DXCLLHRKU/bills/events",
-            "internalContextPath": "/live/v2/external/blueBucksEvents/processBillEvent",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_OdysseyVASRestConnectorsService_processBillEvent"
           }
         ],
         "executor": {
