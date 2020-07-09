@@ -1,304 +1,56 @@
 {
-    "clients": [
-      {
-        "LDAPGroup": "LDAPGroupPums",
-        "clientName": "pums",
-        "businessName": "",
-        "serviceName": "C7XPurchaseManagementService",
-        "requestEndpoint": "C7XPurchaseManagementService.httpEndpoint",
-        "requestEndpointAuthType": "AAA",
-        "connectionTimeoutMilliSec": "500",
-        "readTimeoutMilliSec": "30000",
-        "apis": [
-          {
-            "externalContextPath": "/live/in-store/v1/merchantScan",
-            "internalContextPath": "/live/in-store/v1/merchantScan",
-            "operationName": "merchantScan",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v1_C7XPurchaseManagementService_createMerchantScan"
-          },
-          {
-            "externalContextPath": "/live/in-store/v1/charge",
-            "internalContextPath": "/live/in-store/v1/charge",
-            "operationName": "charge",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v1_C7XPurchaseManagementService_createCharge"
-          },
-          {
-            "externalContextPath": "/live/in-store/v1/refund",
-            "internalContextPath": "/live/in-store/v1/refund",
-            "operationName": "refundExternal",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v1_C7XPurchaseManagementService_createRefund"
-          },
-          {
-            "externalContextPath": "/sandbox/in-store/v1/merchantScan",
-            "internalContextPath": "/sandbox/in-store/v1/merchantScan",
-            "operationName": "merchantScan",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_C7XPurchaseManagementService_createMerchantScan"
-          },
-          {
-            "externalContextPath": "/sandbox/in-store/v1/charge",
-            "internalContextPath": "/sandbox/in-store/v1/charge",
-            "operationName": "charge",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_C7XPurchaseManagementService_createCharge"
-          },
-          {
-            "externalContextPath": "/sandbox/in-store/v1/refund",
-            "internalContextPath": "/sandbox/in-store/v1/refund",
-            "operationName": "refundExternal",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_C7XPurchaseManagementService_createRefund"
-          },
-          {
-            "externalContextPath": "/live/v2/in-store/merchantScan",
-            "internalContextPath": "/live/in-store/v1/merchantScan",
-            "operationName": "merchantScan",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_C7XPurchaseManagementService_createMerchantScan"
-          },
-          {
-            "externalContextPath": "/live/v2/in-store/charge",
-            "internalContextPath": "/live/in-store/v1/charge",
-            "operationName": "charge",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_C7XPurchaseManagementService_createCharge"
-          },
-          {
-            "externalContextPath": "/live/v2/in-store/refund",
-            "internalContextPath": "/live/in-store/v1/refund",
-            "operationName": "refundExternal",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_C7XPurchaseManagementService_createRefund"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/in-store/merchantScan",
-            "internalContextPath": "/sandbox/in-store/v1/merchantScan",
-            "operationName": "merchantScan",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createMerchantScan"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/in-store/charge",
-            "internalContextPath": "/sandbox/in-store/v1/charge",
-            "operationName": "charge",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createCharge"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/in-store/refund",
-            "internalContextPath": "/sandbox/in-store/v1/refund",
-            "operationName": "refundExternal",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createRefund"
-          }
-        ],
-        "executor": {
-          "name": "SignatureBasedAuthNZExecutor",
-          "throttlerConfig": {
-            "burstRatePerSec": 1,
-            "refreshRatePerSec": 1
-          }
+  "clients": [
+    {
+      "LDAPGroup": "LDAPGroupPums",
+      "clientName": "pums",
+      "businessName": "",
+      "serviceName": "C7XPurchaseManagementService",
+      "requestEndpoint": "C7XPurchaseManagementService.httpEndpoint",
+      "requestEndpointAuthType": "AAA",
+      "connectionTimeoutMilliSec": "500",
+      "readTimeoutMilliSec": "30000",
+      "apis": [
+        {
+          "externalContextPath": "/sandbox/v2/in-store/charge",
+          "internalContextPath": "/sandbox/in-store/v1/charge",
+          "operationName": "charge",
+          "supportedMethods": ["POST"],
+          "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createCharge"
         }
-      },
-      {
-        "LDAPGroup": "LDAPGroupNexus",
-        "clientName": "nexus",
-        "businessName": "MerchantOnboarding",
-        "serviceName": "NexusService",
-        "requestEndpoint": "NexusService.httpEndpoint",
-        "requestEndpointAuthType": "AAA",
-        "connectionTimeoutMilliSec": "500",
-        "readTimeoutMilliSec": "30000",
-        "apis": [
-          {
-            "externalContextPath": "/live/account-management/v1/accounts",
-            "internalContextPath": "/live/account-management/v1/accounts",
-            "operationName": "createMerchantAccount",
-            "supportedMethods": ["POST"],
-            "sifEncrypted": true,
-            "throttlingKey": "live_v1_NexusService_createMerchantAccount"
-          },
-          {
-            "externalContextPath": "/live/account-management/v1/accounts",
-            "internalContextPath": "/live/account-management/v1/accounts",
-            "operationName": "getMerchantStatus",
-            "supportedMethods": ["GET"],
-            "throttlingKey": "live_v1_NexusService_getMerchantStatus"
-          },
-          {
-            "externalContextPath": "/sandbox/account-management/v1/accounts",
-            "internalContextPath": "/sandbox/account-management/v1/accounts",
-            "operationName": "createMerchantAccountSandbox",
-            "supportedMethods": ["POST"],
-            "sifEncrypted": true,
-            "throttlingKey": "sandbox_v1_NexusService_createMerchantAccount"
-          },
-          {
-            "externalContextPath": "/sandbox/account-management/v1/accounts",
-            "internalContextPath": "/sandbox/account-management/v1/accounts",
-            "operationName": "getMerchantStatusSandbox",
-            "supportedMethods": ["GET"],
-            "throttlingKey": "sandbox_v1_NexusService_getMerchantStatus"
-          },
-          {
-            "externalContextPath": "/live/v1/authorizationTokens",
-            "internalContextPath": "/live/v1/authorizationTokens",
-            "operationName": "getAuthorizationToken",
-            "supportedMethods": ["GET"],
-            "throttlingKey": "live_v1_NexusService_getAuthorizationToken"
-          },
-          {
-            "externalContextPath": "/live/account-management/v2/accounts",
-            "internalContextPath": "/live/account-management/v1/accounts",
-            "operationName": "createMerchantAccount",
-            "supportedMethods": ["POST"],
-            "sifEncrypted": true,
-            "throttlingKey": "live_v2_NexusService_createMerchantAccount"
-          },
-          {
-            "externalContextPath": "/live/account-management/v2/accounts",
-            "internalContextPath": "/live/account-management/v1/accounts",
-            "operationName": "getMerchantStatus",
-            "supportedMethods": ["GET"],
-            "throttlingKey": "live_v2_NexusService_getMerchantStatus"
-          },
-          {
-            "externalContextPath": "/sandbox/account-management/v2/accounts",
-            "internalContextPath": "/sandbox/account-management/v1/accounts",
-            "operationName": "createMerchantAccountSandbox",
-            "supportedMethods": ["POST"],
-            "sifEncrypted": true,
-            "throttlingKey": "sandbox_v2_NexusService_createMerchantAccount"
-          },
-          {
-            "externalContextPath": "/sandbox/account-management/v2/accounts",
-            "internalContextPath": "/sandbox/account-management/v1/accounts",
-            "operationName": "getMerchantStatusSandbox",
-            "supportedMethods": ["GET"],
-            "throttlingKey": "sandbox_v2_NexusService_getMerchantStatus"
-          },
-          {
-            "externalContextPath": "/live/v2/authorizationTokens",
-            "internalContextPath": "/live/v1/authorizationTokens",
-            "operationName": "getAuthorizationToken",
-            "supportedMethods": ["GET"],
-            "throttlingKey": "live_v2_NexusService_getAuthorizationToken"
-          }
-        ],
-        "executor": {
-          "name": "SignatureBasedAuthNZExecutor",
-          "throttlerConfig": {
-            "burstRatePerSec": 1,
-            "refreshRatePerSec": 1
-          }
-        }
-      },
-      {
-        "LDAPGroup": "LDAPGroupOdyssey",
-        "clientName": "OdysseyVASRestConnectorsService",
-        "businessName": "AmazonPay",
-        "serviceName": "OdysseyVASRestConnectorsService",
-        "requestEndpoint": "OdysseyVASRestConnectorsService.httpEndpoint",
-        "requestEndpointAuthType": "CloudAuth",
-        "connectionTimeoutMilliSec": "500",
-        "readTimeoutMilliSec": "10000",
-        "apis": [
-          {
-            "externalContextPath": "/live/v1/deliveryTrackers",
-            "internalContextPath": "/v2/external/deliveryTrackers",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v1_OdysseyVASRestConnectorsService_deliveryTracker"
-          },
-          {
-            "externalContextPath": "/sandbox/v1/deliveryTrackers",
-            "internalContextPath": "/v2/external/deliveryTrackers",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_OdysseyVASRestConnectorsService_deliveryTracker"
-          },
-          {
-            "externalContextPath": "/sandbox/v1/AWM9DXCLLHRKU/bills/accounts",
-            "internalContextPath": "/sandbox/v2/external/blueBucks/linkAccountFromWeb",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_OdysseyVASRestConnectorsService_linkAccountFromWeb"
-          },
-          {
-            "externalContextPath": "/live/v1/AWM9DXCLLHRKU/bills/accounts",
-            "internalContextPath": "/live/v2/external/blueBucks/linkAccountFromWeb",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v1_OdysseyVASRestConnectorsService_linkAccountFromWeb"
-          },
-          {
-            "externalContextPath": "/sandbox/v1/AWM9DXCLLHRKU/bills/events",
-            "internalContextPath": "/sandbox/v2/external/blueBucksEvents/processBillEvent",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v1_OdysseyVASRestConnectorsService_processBillEvent"
-          },
-          {
-            "externalContextPath": "/live/v1/AWM9DXCLLHRKU/bills/events",
-            "internalContextPath": "/live/v2/external/blueBucksEvents/processBillEvent",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v1_OdysseyVASRestConnectorsService_processBillEvent"
-          },
-          {
-            "externalContextPath": "/live/v2/deliveryTrackers",
-            "internalContextPath": "/v2/external/deliveryTrackers",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_OdysseyVASRestConnectorsService_deliveryTracker"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/deliveryTrackers",
-            "internalContextPath": "/v2/external/deliveryTrackers",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_OdysseyVASRestConnectorsService_deliveryTracker"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/AWM9DXCLLHRKU/bills/accounts",
-            "internalContextPath": "/sandbox/v2/external/blueBucks/linkAccountFromWeb",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_OdysseyVASRestConnectorsService_linkAccountFromWeb"
-          },
-          {
-            "externalContextPath": "/live/v2/AWM9DXCLLHRKU/bills/accounts",
-            "internalContextPath": "/live/v2/external/blueBucks/linkAccountFromWeb",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_OdysseyVASRestConnectorsService_linkAccountFromWeb"
-          },
-          {
-            "externalContextPath": "/sandbox/v2/AWM9DXCLLHRKU/bills/events",
-            "internalContextPath": "/sandbox/v2/external/blueBucksEvents/processBillEvent",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "sandbox_v2_OdysseyVASRestConnectorsService_processBillEvent"
-          },
-          {
-            "externalContextPath": "/live/v2/AWM9DXCLLHRKU/bills/events",
-            "internalContextPath": "/live/v2/external/blueBucksEvents/processBillEvent",
-            "operationName": "externalResource",
-            "supportedMethods": ["POST"],
-            "throttlingKey": "live_v2_OdysseyVASRestConnectorsService_processBillEvent"
-          }
-        ],
-        "executor": {
-          "name": "SignatureBasedAuthNZExecutor",
-          "throttlerConfig": {
-            "burstRatePerSec": 1,
-            "refreshRatePerSec": 1
-          }
+      ],
+      "executor": {
+        "name": "SignatureBasedAuthNZExecutor",
+        "throttlerConfig": {
+          "burstRatePerSec": 1,
+          "refreshRatePerSec": 1
         }
       }
-    ]
-  }
-  
+    },
+    {
+      "LDAPGroup": "LDAPGroupNexus",
+      "clientName": "nexus",
+      "businessName": "",
+      "serviceName": "C7XPurchaseManagementService",
+      "requestEndpoint": "C7XPurchaseManagementService.httpEndpoint",
+      "requestEndpointAuthType": "AAA",
+      "connectionTimeoutMilliSec": "500",
+      "readTimeoutMilliSec": "30000",
+      "apis": [
+        {
+          "externalContextPath": "/sandbox/v2/in-store/charge",
+          "internalContextPath": "/sandbox/in-store/v1/charge",
+          "operationName": "charge",
+          "supportedMethods": ["POST"],
+          "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createCharge"
+        }
+      ],
+      "executor": {
+        "name": "SignatureBasedAuthNZExecutor",
+        "throttlerConfig": {
+          "burstRatePerSec": 1,
+          "refreshRatePerSec": 1
+        }
+      }
+    }
+  ]
+}
