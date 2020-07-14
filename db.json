@@ -1,21 +1,88 @@
 {
   "clients": [
     {
-      "LDAPGroup": "LDAPGroupPums",
-      "clientName": "pums",
-      "businessName": "",
-      "serviceName": "C7XPurchaseManagementService",
-      "requestEndpoint": "C7XPurchaseManagementService.httpEndpoint",
+      "LDAPGroup": "test-nexus",
+      "clientName": "nexus",
+      "businessName": "MerchantOnboarding",
+      "serviceName": "NexusService",
+      "requestEndpoint": "NexusService.httpEndpoint",
       "requestEndpointAuthType": "AAA",
       "connectionTimeoutMilliSec": "500",
       "readTimeoutMilliSec": "30000",
       "apis": [
         {
-          "externalContextPath": "/sandbox/v2/in-store/charge",
-          "internalContextPath": "/sandbox/in-store/v1/charge",
-          "operationName": "charge",
+          "externalContextPath": "/live/account-management/v1/accounts",
+          "internalContextPath": "/live/account-management/v1/accounts",
+          "operationName": "createMerchantAccount",
           "supportedMethods": ["POST"],
-          "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createCharge"
+          "sifEncrypted": true,
+          "throttlingKey": "live_v1_NexusService_createMerchantAccount"
+        },
+        {
+          "externalContextPath": "/live/account-management/v1/accounts",
+          "internalContextPath": "/live/account-management/v1/accounts",
+          "operationName": "getMerchantStatus",
+          "supportedMethods": ["GET"],
+          "throttlingKey": "live_v1_NexusService_getMerchantStatus"
+        },
+        {
+          "externalContextPath": "/sandbox/account-management/v1/accounts",
+          "internalContextPath": "/sandbox/account-management/v1/accounts",
+          "operationName": "createMerchantAccountSandbox",
+          "supportedMethods": ["POST"],
+          "sifEncrypted": true,
+          "throttlingKey": "sandbox_v1_NexusService_createMerchantAccount"
+        },
+        {
+          "externalContextPath": "/sandbox/account-management/v1/accounts",
+          "internalContextPath": "/sandbox/account-management/v1/accounts",
+          "operationName": "getMerchantStatusSandbox",
+          "supportedMethods": ["GET"],
+          "throttlingKey": "sandbox_v1_NexusService_getMerchantStatus"
+        },
+        {
+          "externalContextPath": "/live/v1/authorizationTokens",
+          "internalContextPath": "/live/v1/authorizationTokens",
+          "operationName": "getAuthorizationToken",
+          "supportedMethods": ["GET"],
+          "throttlingKey": "live_v1_NexusService_getAuthorizationToken"
+        },
+        {
+          "externalContextPath": "/live/account-management/v2/accounts",
+          "internalContextPath": "/live/account-management/v1/accounts",
+          "operationName": "createMerchantAccount",
+          "supportedMethods": ["POST"],
+          "sifEncrypted": true,
+          "throttlingKey": "live_v2_NexusService_createMerchantAccount"
+        },
+        {
+          "externalContextPath": "/live/account-management/v2/accounts",
+          "internalContextPath": "/live/account-management/v1/accounts",
+          "operationName": "getMerchantStatus",
+          "supportedMethods": ["GET"],
+          "throttlingKey": "live_v2_NexusService_getMerchantStatus"
+        },
+        {
+          "externalContextPath": "/sandbox/account-management/v2/accounts",
+          "internalContextPath": "/sandbox/account-management/v1/accounts",
+          "operationName": "createMerchantAccountSandbox",
+          "supportedMethods": ["POST"],
+          "sifEncrypted": true,
+          "throttlingKey": "sandbox_v2_NexusService_createMerchantAccount"
+        },
+        {
+          "externalContextPath": "/sandbox/account-management/v2/accounts",
+          "internalContextPath": "/sandbox/account-management/v1/accounts",
+          "operationName": "getMerchantStatusSandbox",
+          "supportedMethods": ["GET"],
+          "throttlingKey": "sandbox_v2_NexusService_getMerchantStatus"
+        },
+        {
+          "externalContextPath": "/live/v2/authorizationTokens",
+          "internalContextPath": "/live/v1/authorizationTokens",
+          "operationName": "getAuthorizationToken",
+          "supportedMethods": ["GET"],
+          "throttlingKey": "live_v2_NexusService_getAuthorizationToken"
         }
       ],
       "executor": {
@@ -27,25 +94,40 @@
       }
     },
     {
-      "LDAPGroup": "LDAPGroupNexus",
-      "clientName": "nexus",
-      "businessName": "",
-      "serviceName": "C7XPurchaseManagementService",
-      "requestEndpoint": "C7XPurchaseManagementService.httpEndpoint",
+      "LDAPGroup": "test-propane",
+      "clientName": "Propane",
+      "businessName": "AmazonPay",
+      "serviceName": "PropaneService",
+      "requestEndpoint": "PropaneService.httpEndpoint",
       "requestEndpointAuthType": "AAA",
       "connectionTimeoutMilliSec": "500",
       "readTimeoutMilliSec": "30000",
       "apis": [
         {
-          "externalContextPath": "/sandbox/v2/in-store/charge",
-          "internalContextPath": "/sandbox/in-store/v1/charge",
-          "operationName": "charge",
+          "externalContextPath": "/live/v2/refunds",
+          "internalContextPath": "/live/v2/refunds",
+          "operationName": "CreateRefund",
           "supportedMethods": ["POST"],
-          "throttlingKey": "sandbox_v2_C7XPurchaseManagementService_createCharge"
+          "clientHeaderNames": ["x-amz-pay-idempotency-key"],
+          "authorizerConfig": {
+            "callerTypeConfigurations": [
+              { "name": "SolutionProvider", "authTokenType": "JWT" },
+              { "name": "Merchant" },
+              { "name": "PaymentServiceProvider", "authTokenType": "JWT" }
+            ]
+          },
+          "throttlingKey": "live_v2_PropaneService_createRefund"
         }
       ],
       "executor": {
         "name": "SignatureBasedAuthNZExecutor",
+        "authorizerConfig": {
+          "callerTypeConfigurations": [
+            { "name": "MerchantOfAcquirer" },
+            { "name": "Acquirer" },
+            { "name": "Merchant" }
+          ]
+        },
         "throttlerConfig": {
           "burstRatePerSec": 1,
           "refreshRatePerSec": 1
