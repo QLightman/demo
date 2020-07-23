@@ -1,8 +1,8 @@
 {
 "ldap":[
-    'amazonpay-teamrocket',
-    'test-propane',
-    'test-nexus',
-    'test-new-client'
+    "amazonpay-teamrocket",
+    "test-propane",
+    "test-nexus",
+    "test-new-client"
   ]
 }
