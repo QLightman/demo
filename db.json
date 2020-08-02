@@ -1,7 +1,7 @@
 {
   "clients": [
     {
-      "LDAPGroup": "test-nexus",
+      "ldapGroup": "test-nexus",
       "clientName": "nexus",
       "businessName": "MerchantOnboarding",
       "serviceName": "NexusService",
@@ -94,7 +94,7 @@
       }
     },
     {
-      "LDAPGroup": "test-propane",
+      "ldapGroup": "test-propane",
       "clientName": "Propane",
       "businessName": "AmazonPay",
       "serviceName": "PropaneService",
